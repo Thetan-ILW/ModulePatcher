@@ -39,7 +39,7 @@ local function getOverride(filename)
 
         instance.__patch = patch
 
-        if instance.__index ~= nil then -- it's a class
+        if instance.new then -- it's a class
             instance.baseNew = instance.new
 
             instance.new = function (...)
